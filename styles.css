@@ -28,9 +28,33 @@ body::before {
     background: repeating-linear-gradient(
         to bottom,
         transparent,
-        transparent 1px,
-        rgba(255, 255, 255, 0.03) 1px,
-        rgba(255, 255, 255, 0.03) 2px
+        transparent 0.95px,
+        rgba(255, 255, 255, 0.02) 0.95px,
+        rgba(255, 255, 255, 0.02) 1px
     );
     pointer-events: none;
+    z-index: 1000;
+}
+
+/* Enhanced glow for binary digits */
+.binary-digit {
+    animation: fadeIn 0.1s linear, fadeOut 1s linear 2s forwards;
+    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+}
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
