@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Beginning</title>
-    <link rel="stylesheet" href="styles.css">
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+    <head>
+        <title>The Beginning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <link type="text/css" rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+
+        <div id="container"></div>
+
+        <script type="importmap">
+            {
+                "imports": {
+                    "three": "https://unpkg.com/three@0.157.0/build/three.module.js",
+                    "three/addons/": "https://unpkg.com/three@0.157.0/examples/jsm/"
+                }
             }
-        }
-    </script>
-</head>
-<body>
-    <script type="module" src="./jscript/main.js"></script>
-    <script type="module" src="./jscript/globe.js"></script>
-    <script type="module" src="./jscript/countdown.js"></script>
-    <div class="countdown-timer">
-        <span id="days">00</span> : 
-        <span id="hours">00</span> : 
-        <span id="minutes">00</span> : 
-        <span id="seconds">00</span>
-        <span id="milliseconds">000</span>
-    </div>
-</body>
+        </script>
+
+        <script type="module" src="./jscript/main.js"></script>
+        <script type="module" src="./jscript/globe.js"></script>
+        <!--<script type="module" src="./jscript/countdown.js"></script>
+        <div class="countdown-timer">
+            <span id="days">00</span> : 
+            <span id="hours">00</span> : 
+            <span id="minutes">00</span> : 
+            <span id="seconds">00</span>
+            <span id="milliseconds">000</span>
+        </div>-->
+    </body>
 </html>
