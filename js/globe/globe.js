@@ -2,28 +2,25 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { EffectComposer } from 'three/addons/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/addons/postprocessing/RenderPass.js';
-import { ShaderPass } from 'three/addons/postprocessing/ShaderPass.js';
 import { UnrealBloomPass } from 'three/addons/postprocessing/UnrealBloomPass.js';
-import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 import { globeState } from './GlobeState.js';
 
-let camera, scene, bloomScene, renderer, controls, group;
-let bloomRenderScene, finalRenderScene, bloomPass, bloomComposer, outputPass, finalComposer;
+let camera, scene, renderer, controls, group;
+let finalRenderScene, bloomPass, finalComposer;
 
 const particlesData = [];
 let particles, pointCloud, particlePositions;
 
-const travelingParticlesCount = 15; // Number of traveling particles
-//let maxIndex;
+const travelingParticlesCount = 25; // Number of traveling particles
 
 const BLOOM_LAYER = new THREE.Layers();
 BLOOM_LAYER.set(1);  // '1' is the layer number for blooming objects
 
 const params = {
 	threshold: 0,
-	strength: 10,
-	radius: 0,
-	exposure: 1
+	strength: 20,
+	radius: 1,
+	exposure: 5
 };
 
 init();
@@ -39,18 +36,14 @@ function init() {
 	container.appendChild( renderer.domElement );
 
 	// SCENE
-	//bloomScene = new THREE.Scene();
 	scene = new THREE.Scene();
 	scene.fog = new THREE.Fog(0x000000, 1400, 2400);
 	
-
 	// CAMERA
 	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 4000 );
 	camera.position.z = 1750;
 
-	//bloomScene.add( camera );
 	scene.add( camera );
-	
 
 	// CONTROLS
 	controls = new OrbitControls( camera, renderer.domElement );
@@ -63,9 +56,7 @@ function init() {
 
 	setupScene();
 
-	//bloomScene.add( globeState.travelingParticles );
 	scene.add( group );
-	//scene.add( globeState.travelingParticles );
 	
 	window.addEventListener( 'resize', onWindowResize );
 }
@@ -73,29 +64,20 @@ function init() {
 function initPostprocessing() {
 
 	// BLOOM
-	//bloomComposer = new EffectComposer( renderer );
-	//bloomRenderScene = new RenderPass( bloomScene, camera );
-
 	bloomPass = new UnrealBloomPass( new THREE.Vector2( window.innerWidth, window.innerHeight ), 1.5, 0.4, 0.85 );
 	bloomPass.threshold = params.threshold;
 	bloomPass.strength = params.strength;
 	bloomPass.radius = params.radius;
 	bloomPass.renderToScreen = true;
 
-	//bloomComposer.addPass(new RenderPass(bloomScene, camera) );
-	//bloomComposer.addPass( bloomPass );
-
 	// FINAL COMPOSER
 	finalComposer = new EffectComposer( renderer );
 	finalComposer.setSize( window.innerWidth, window.innerHeight );
 
 
-	finalRenderScene = new RenderPass( scene, camera );
-
-	//outputPass = new OutputPass();
+	finalRenderScene = new RenderPass( scene, camera )
 	
 	finalComposer.addPass( finalRenderScene );
-	//finalComposer.addPass( bloomRenderScene );
 	finalComposer.addPass( bloomPass );
 }
 
@@ -125,7 +107,6 @@ function setupScene() {
 	// Store the number of vertices in the sphere
 	globeState.sphereNumVertices = globeState.sphereGeometry.attributes.position.count; // "540"
 
-	let maxIndex = globeState.sphereGeometry.attributes.position.count;
 	group.add( sphere );
 
 	// Randomly select a vertext from the sphere
@@ -208,6 +189,7 @@ function setupScene() {
 		globeState.travelingParticlesVertices.push(globeState.sphereVertices[vertexIndex], globeState.sphereVertices[vertexIndex + 1], globeState.sphereVertices[vertexIndex + 2]);
 	}
 	travelingParticlesGeometry.setAttribute('position', new THREE.Float32BufferAttribute(globeState.travelingParticlesVertices, 3));
+	
 	const travelingParticlesMaterial = new THREE.PointsMaterial({
 		color: 0x00FF00,  // Green color
 		size: 5,
@@ -253,8 +235,6 @@ function setupScene() {
 }
 
 function render() {
-	//scene.traverse( disposeMaterial );
-	//scene.children.length = 0;
 
 	const time = Date.now() * 0.0005;
 
@@ -262,20 +242,15 @@ function render() {
 	group.rotation.y = time * 0.1;
 	group.rotation.z = time * 0.05;
 
-	//scene.traverse( darkenNonBloomed );
-	//bloomComposer.render();
-	//scene.traverse( restoreMaterial );
 	renderer.autoClear = false;
 	renderer.clear();
 	
 	camera.layers.set(1);  // Set the camera to the bloom layer.
 	finalComposer.render(); 
-	//bloomComposer.render();  // Render the bloom composer.
 
 	renderer.clearDepth();  // Clear the depth, so the next render isn't occluded by this one.
 	camera.layers.set(0);  // Set the camera back to the default layer, to render everything.
 	renderer.render(scene, camera);  // Render the scene.
-	//finalComposer.render();  // Render the final composer.
 }
 
 function animate() {
@@ -311,8 +286,6 @@ function findClosestVertices (vert, geometry, count) {
 	return closest;
 }
 
-// This function checks if the particle system is ready for the next movement step.
-// It is called before each movement step.
 function isParticleSystemReady() {
 	if (globeState.pauseMovement) {
 		//console.warn("The system is paused. No movement will occur.");
@@ -327,8 +300,6 @@ function isParticleSystemReady() {
 	return true;
 }
 
-// This function sets a timeout to revive/reset a particle after it has been "consumed" or reached its destination.
-// It is called after a particle has been "consumed" or reached its destination.
 function handleParticleTimeout() {
     setTimeout(() => {
         globeState.pauseMovement = false;
@@ -367,8 +338,6 @@ function handleParticleTimeout() {
     }, 3000 + Math.random() * 2000); // Random wait time between 3 to 5 seconds
 }
 
-// This function updates the position of a particle based on its current interpolation factor.
-// It is called after a particle has been "consumed" or reached its destination.
 function updateParticlePosition(particleData, i) {
 	const newPosition = new THREE.Vector3();
     newPosition.lerpVectors(particleData.source, particleData.target, particleData.lerpFactor);
@@ -377,8 +346,6 @@ function updateParticlePosition(particleData, i) {
 	globeState.travelingParticlesVertices[i * 3 + 2] = newPosition.z;
 }
 
-// This function resets a particle's data and state after it reaches a certain condition.
-// It is called after a particle has been "consumed" or reached its destination.
 function resetParticle(particleData, i) {
 	particleData.lerpFactor = 0;
 	particleData.prevTargetIndex = particleData.closestVertices.indexOf(particleData.targetIndex);
@@ -409,8 +376,6 @@ function resetParticle(particleData, i) {
 	}
 }
 
-// This function handles the movement of a single particle.
-// It is called for each particle in the particlesData array.
 function moveParticle(particleData, i) {
 	// Add a vistedCount property if not present
 	if (typeof particleData.visitedCount === 'undefined') {
@@ -426,8 +391,6 @@ function moveParticle(particleData, i) {
 	}
 }
 
-// This function handles the movement of all particles.
-// It is called once per frame.
 function moveParticlesAlongEdges() {
 	if (!isParticleSystemReady()) {
 		return;
@@ -442,4 +405,3 @@ function moveParticlesAlongEdges() {
     globeState.travelingParticles.geometry.setAttribute('position', new THREE.Float32BufferAttribute(globeState.travelingParticlesVertices, 3));
     globeState.travelingParticles.geometry.attributes.position.needsUpdate = true;
 }
-
