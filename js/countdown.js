@@ -25,18 +25,3 @@ function updateCountdown() {
 }
 
 setInterval(updateCountdown, 1);
-
-// Binary Flying Effect
-setInterval(function() {
-    const binary = (Math.random() < 0.5) ? '0' : '1';
-    const span = document.createElement("span");
-    span.textContent = binary;
-    span.className = "binary-digit";
-    span.style.position = "fixed";
-    span.style.left = `${Math.random() * 100}vw`;
-    span.style.top = `${Math.random() * 100}vh`;
-    span.style.fontSize = `${Math.random() * 30}px`;
-    document.body.appendChild(span);
-    
-    setTimeout(() => span.remove(), 3000);
-}, 50);

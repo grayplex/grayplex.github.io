@@ -9,9 +9,9 @@ let camera, scene, renderer, controls, group;
 let finalRenderScene, bloomPass, finalComposer;
 
 const particlesData = [];
-let particles, pointCloud, particlePositions;
+let particles, pointCloud, particlePositions, sphere;
 
-const travelingParticlesCount = 25; // Number of traveling particles
+const travelingParticlesCount = 50; // Number of traveling particles
 
 const BLOOM_LAYER = new THREE.Layers();
 BLOOM_LAYER.set(1);  // '1' is the layer number for blooming objects
@@ -29,20 +29,23 @@ function init() {
 
 	// RENDERER
 	const container = document.getElementById( 'container' );
-	renderer = new THREE.WebGLRenderer( { antialias: true } );
+	renderer = new THREE.WebGLRenderer( { alpha: true, antialias: true } );
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
+	renderer.setClearColor( 0x000000, 0)
 	renderer.toneMapping = THREE.ReinhardToneMapping;
 	container.appendChild( renderer.domElement );
 
 	// SCENE
 	scene = new THREE.Scene();
-	scene.fog = new THREE.Fog(0x000000, 1400, 2400);
+	scene.background = null;
+	scene.fog = new THREE.Fog(0x000000, 1200, 2000);
 	
 	// CAMERA
-	camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 4000 );
-	camera.position.z = 1750;
-
+	camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 4000 );
+	camera.position.z = 1200;
+	camera.rotation.x = -Math.PI / 4;
+	camera.updateProjectionMatrix();
 	scene.add( camera );
 
 	// CONTROLS
@@ -56,6 +59,7 @@ function init() {
 
 	setupScene();
 
+	
 	scene.add( group );
 	
 	window.addEventListener( 'resize', onWindowResize );
@@ -94,19 +98,19 @@ function onWindowResize() {
 function setupScene() {
 
 	//#region SPHERE
-	globeState.sphereGeometry = new THREE.IcosahedronGeometry( 600, 3 );
+	globeState.sphereGeometry = new THREE.IcosahedronGeometry( 950, 3 );
 	const sphereMaterial = new THREE.MeshBasicMaterial( { 
 		color: '#A9A9A9', 	// Color of the mesh (gray)
 		wireframe: true, 	// Disable faces of mesh
 		transparent: true,	// Make mesh transparent
 		opacity: 0.5 		// Opacity of the mesh
 	});
-	const sphere = new THREE.Mesh( globeState.sphereGeometry, sphereMaterial );
+	sphere = new THREE.Mesh( globeState.sphereGeometry, sphereMaterial );
 	// Store the vertices of the sphere in an array
 	globeState.sphereVertices = globeState.sphereGeometry.attributes.position.array;
 	// Store the number of vertices in the sphere
 	globeState.sphereNumVertices = globeState.sphereGeometry.attributes.position.count; // "540"
-
+	sphere.position.y = -900;
 	group.add( sphere );
 
 	// Randomly select a vertext from the sphere
@@ -176,6 +180,7 @@ function setupScene() {
 	pointCloud = new THREE.Points( particles, pMaterial );
 	pointCloud.renderOrder = 0;
 	pointCloud.layers.set(0);
+	pointCloud.position.y = -900;
 	group.add( pointCloud ); // Add the particle system to the scene
 	//#endregion
 
@@ -203,6 +208,7 @@ function setupScene() {
 	globeState.travelingParticles.material.needsUpdate = true;
 	globeState.travelingParticles.renderOrder = 1;
 	globeState.travelingParticles.layers.enable(1); // '1' is the layer number you set for blooming objects
+	globeState.travelingParticles.position.y = -900;
 	group.add(globeState.travelingParticles);
 
 	// Initialize the traveling particles data
@@ -238,12 +244,22 @@ function render() {
 
 	const time = Date.now() * 0.0005;
 
-	group.rotation.x = time * 0.075;
-	group.rotation.y = time * 0.1;
-	group.rotation.z = time * 0.05;
+	sphere.rotation.x = time * 0.075;
+	//sphere.rotation.y = time * 0.1;
+	sphere.rotation.z = time * 0.05;
 
-	renderer.autoClear = false;
-	renderer.clear();
+	pointCloud.rotation.x = time * 0.075;
+	//sphere.rotation.y = time * 0.1;
+	pointCloud.rotation.z = time * 0.05;
+
+	globeState.travelingParticles.rotation.x = time * 0.075;
+	//sphere.rotation.y = time * 0.1;
+	globeState.travelingParticles.rotation.z = time * 0.05;
+
+	//renderer.autoClear = false;
+	renderer.clearDepth();
+	renderer.clearColor();
+	//renderer.clear();
 	
 	camera.layers.set(1);  // Set the camera to the bloom layer.
 	finalComposer.render(); 

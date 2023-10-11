@@ -1,4 +1,4 @@
-body {
+html, body {
     background-color: black;
     overflow: hidden;
     font-family: 'Courier New', monospace;
@@ -6,15 +6,42 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
+/* For the Matrix effect */
+canvas#Matrix {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0; /* lower than the countdown timer */
+    opacity: 0.35;
+
+}
+
+/* For the rotating globe */
+#container {
+    position: absolute;
+    top: 0%;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1;
+}
+
+/* Countdown timer */
 .countdown-timer {
     font-size: 3rem;
+    position: absolute;
     color: #00FF00;
     text-shadow: 0 0 10px #00FF00;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px) opacity(50%);
     padding: 20px;
     border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    z-index: 2;
 }
 
 /* For scanline effect */
@@ -34,27 +61,4 @@ body::before {
     );
     pointer-events: none;
     z-index: 1000;
-}
-
-/* Enhanced glow for binary digits */
-.binary-digit {
-    animation: fadeIn 0.1s linear, fadeOut 1s linear 2s forwards;
-    text-shadow: 0 0 5px #00FF00, 0 0 10px #00FF00, 0 0 15px #00FF00;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to   { opacity: 0; }
-}
-
-canvas {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
 }
