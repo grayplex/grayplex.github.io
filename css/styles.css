@@ -10,6 +10,16 @@ html, body {
     padding: 0;
 }
 
+#textOverlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: transparent;
+    text-shadow: 0 0 10px #00FF00;
+    font-size: 3em;
+}
+
 /* For the Matrix effect */
 canvas#Matrix {
     position: absolute;

@@ -23,8 +23,17 @@ const draw = () => {
     context.fillStyle = 'rgba(0, 0, 0, 0.05)';
     context.fillRect(0, 0, canvas.width, canvas.height);
 
+    const text = 'trace_route';
+    const textx = (canvas.width - context.measureText(text).width)/2;
+    const texty = canvas.height/2;
+    context.clearRect(textx, texty - fontSize, context.measureText(text).width, fontSize);
+
     context.fillStyle = '#0F0';
     context.font = fontSize + 'px monospace';
+
+    context.fillText(text, textx, texty);
+
+    
 
     for(let i = 0; i < rainDrops.length; i++)
     {
