@@ -1,0 +1,29 @@
+/* custom.css */
+
+/* Override default font */
+body {
+    font-family: 'Source Code Pro', monospace;
+    background-color: #282828; /* replace with your color */
+  }
+  
+  /* Override primary color */
+  .btn-primary,
+  .bg-primary,
+  .text-primary {
+    color: #4AFF00 !important; /* replace with your color */
+    background-color: #282828 !important; /* replace with your color */
+    /* Add other properties as needed */
+  }
+  
+  /* Add more overrides for secondary, tertiary, and accent colors */
+  /* Replace `.btn-secondary` with other classes as necessary for your design */
+  .btn-secondary,
+  .bg-secondary,
+  .text-secondary {
+    color: #FFB700 !important; /* replace with your color */
+    background-color: #282828 !important; /* replace with your color */
+    /* Add other properties as needed */
+  }
+  
+  /* Continue with tertiary and accent colors, targeting the appropriate elements */
+  
