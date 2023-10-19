@@ -46,7 +46,7 @@ canvas#Matrix {
     position: absolute;
     color: #00FF00;
     text-shadow: 0 0 10px #00FF00;
-    backdrop-filter: blur(5px) opacity(50%);
+    backdrop-filter: blur(5px) opacity(25%);
     padding: 20px;
     border-radius: 15px;
     background-color: rgba(0, 0, 0, 0.5);

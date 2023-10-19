@@ -17,9 +17,9 @@ const BLOOM_LAYER = new THREE.Layers();
 BLOOM_LAYER.set(1);  // '1' is the layer number for blooming objects
 
 const params = {
-	threshold: 0,
+	threshold: 1,
 	strength: 20,
-	radius: 1,
+	radius: 100,
 	exposure: 5
 };
 
@@ -197,9 +197,9 @@ function setupScene() {
 	
 	const travelingParticlesMaterial = new THREE.PointsMaterial({
 		color: 0x00FF00,  // Green color
-		size: 5,
-		transparent: true,
-		opacity: 0.5,
+		size: 8,
+		transparent: false,
+		opacity: .75,
 		blending: THREE.AdditiveBlending
 	});
 
