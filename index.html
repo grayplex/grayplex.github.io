@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
-    
+<html lang="en" data-bs-theme="dark">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Scripts -->
+        <script src="./assets/js/color-mode.js"></script>
 
+        <!-- Meta -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="" >
+        <meta name="author" content=">trace_route">
         <title>The Beginning</title>
-        <meta content="" name="description">
-        <meta content="" name="keywords">
+        <meta name="theme-color" content="#4AFF00">
+        <link rel="canonical" href="https://traceroutemusic.com/">
 
         <!-- Favicons -->
-
-
 
         <!-- Google Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,38 +24,149 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-        <!-- Template Main CSS File -->
-        <link href="assets/css/style.css" rel="stylesheet">
+        <!-- Main CSS File -->
+        <link href="./assets/css/styles.css" rel="stylesheet">
+        <link href="./assets/css/custom.css" rel="stylesheet">
+        
 
     </head>
     
     <body>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
-        <!-- Navbar -->
-            <nav class="navbar navbar-expand-lg bg-dark border-bottom border-body" data-bs-theme="dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">>trace_route</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="material-icons">menu</span>
+        <!-- Color Mode Icons -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+            <symbol id="check" viewBox="0 0 16 16">
+                <path d="M21 7L9 19l-5.5-5.5l1.41-1.41L9 16.17L19.59 5.59L21 7Z"/>
+            </symbol>
+            <symbol id="circle-half-full" viewBox="0 0 16 16">
+                <path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10a10 10 0 0 0 10-10A10 10 0 0 0 12 2m0 2a8 8 0 0 1 8 8a8 8 0 0 1-8 8V4Z"/>
+            </symbol>
+            <symbol id="weather-night" viewBox="0 0 16 16">
+                <path d="m17.75 4.09l-2.53 1.94l.91 3.06l-2.63-1.81l-2.63 1.81l.91-3.06l-2.53-1.94L12.44 4l1.06-3l1.06 3l3.19.09m3.5 6.91l-1.64 1.25l.59 1.98l-1.7-1.17l-1.7 1.17l.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95l2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85c-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14c.4-.4.82-.76 1.27-1.08c.75-.53 1.93.36 1.85 1.19c-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82c-2.81 3.14-2.7 7.96.31 10.98c3.02 3.01 7.84 3.12 10.98.31Z"/>
+            </symbol>
+            <symbol id="weather-sunny" viewBox="0 0 16 16">
+                <path d="M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3m0-7l2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10l1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10l-4.14.36c.59-.51 1.12-1.14 1.54-1.86c.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44c.82 0 1.63-.17 2.37-.44L12 22Z"/>
+            </symbol>
+        </svg>
+
+        <!-- Color Mode HTML -->
+        <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+            <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
+                    id="bd-theme" 
+                    type="button" 
+                    aria-expanded="false" 
+                    data-bs-toggle="dropdown" 
+                    aria-label="Toggle theme (auto)">
+                <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half-full"></use></svg>
+                <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
+                        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#weather-sunny"></use></svg>
+                        Light
+                        <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check"></use></svg>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Music</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
+                        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#weather-night"></use></svg>
+                        Dark
+                        <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check"></use></svg>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
+                        <svg class="bi me-2 opacity-50 theme-icon" width="1em" height="1em"><use href="#circle-half-full"></use></svg>
+                        Auto
+                        <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check"></use></svg>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Header / Navbar -->
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap"></use>
+                    </svg>
+                    <span class="fs-4">>trace_route</span>
+                </a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Music</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
+                </ul>
+            </header>
+        </div>
+        
+        <!-- Home Page -->
+        <div class="container">
+            
+        </div>
+
+        <!-- Footer -->
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-non lh-1">
+                        <svg class="bi" width="30" height="24">
+                            <use xlink:href="#bootstrap"></use>
+                        </svg>
+                    </a>
+                    <span class="mb-3 mb-md-0 text-body-secondary">© 2023 >trace_route music</span>
                 </div>
-            </nav>
+                <ul class="nav col-md-8 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3">
+                        <a href="https://twitter.com/trace_route" class="mx-2">
+                            <iconify-icon inline class="social-icon" icon="mdi:twitter" ></iconify-icon>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a href="https://instagram.com/trace_route" class="mx-2">
+                            <iconify-icon inline class="social-icon" icon="mdi:instagram" ></iconify-icon>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a href="https://facebook.com/trace_route" class="mx-2">
+                            <iconify-icon inline class="social-icon" icon="mdi:facebook" ></iconify-icon>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a href="https://tiktok.com/trace_route" class="mx-2">
+                            <iconify-icon inline class="social-icon" icon="ic:baseline-tiktok" ></iconify-icon>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a href="https://spotify.com/trace_route" class="mx-2">
+                            <iconify-icon inline class="social-icon" icon="mdi:spotify" ></iconify-icon>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a href="https://soundcloud.com/trace_route" class="mx-2">
+                            <iconify-icon inline class="social-icon" icon="mdi:soundcloud" ></iconify-icon>
+                        </a>
+                    </li>
+                    <li class="ms-3">
+                        <a href="https://youtube.com/trace_route" class="mx-2">
+                            <iconify-icon inline class="social-icon" icon="mdi:youtube" ></iconify-icon>
+                        </a>
+                    </li>
+                </ul>
+            </footer>
+        </div>
     </body>
 </html>
