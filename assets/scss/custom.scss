@@ -29,17 +29,17 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 
 // Light Mode
 $custom-colors-text: ("custom-color": #282828);
-$custom-colors-bg-subtle: ("custom-color": #F8F9FA);
-$custom-colors-border-subtle: ("custom-color": #E9ECEF);
+$custom-colors-bg-subtle: ("custom-color": #ACB9C3);
+$custom-colors-border-subtle: ("custom-color": #ACB9C3);
 
 $theme-colors-text: map-merge($map1: $theme-colors-text, $map2: $custom-colors-text);
 $theme-colors-bg-subtle: map-merge($map1: $theme-colors-bg-subtle, $map2: $custom-colors-bg-subtle);
 $theme-colors-border-subtle: map-merge($map1: $theme-colors-border-subtle, $map2: $custom-colors-border-subtle);
 
 // Dark Mode
-$custom-colors-text-dark: ("custom-color": #F8F9FA);
+$custom-colors-text-dark: ("custom-color": #ACB9C3);
 $custom-colors-bg-subtle-dark: ("custom-color": #282828);
-$custom-colors-border-subtle-dark: ("custom-color": #343A40);
+$custom-colors-border-subtle-dark: ("custom-color": #282828);
 
 $theme-colors-text-dark: map-merge($map1: $theme-colors-text-dark, $map2: $custom-colors-text-dark);
 $theme-colors-bg-subtle-dark: map-merge($map1: $theme-colors-bg-subtle-dark, $map2: $custom-colors-bg-subtle-dark);

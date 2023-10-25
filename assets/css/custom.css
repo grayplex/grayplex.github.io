@@ -59,7 +59,7 @@
   --bs-danger-bg-subtle: #f8d7da;
   --bs-light-bg-subtle: #fcfcfd;
   --bs-dark-bg-subtle: #ced4da;
-  --bs-custom-color-bg-subtle: #F8F9FA;
+  --bs-custom-color-bg-subtle: #ACB9C3;
   --bs-primary-border-subtle: #9ec5fe;
   --bs-secondary-border-subtle: #c4c8cb;
   --bs-success-border-subtle: #a3cfbb;
@@ -68,7 +68,7 @@
   --bs-danger-border-subtle: #f1aeb5;
   --bs-light-border-subtle: #e9ecef;
   --bs-dark-border-subtle: #adb5bd;
-  --bs-custom-color-border-subtle: #E9ECEF;
+  --bs-custom-color-border-subtle: #ACB9C3;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-font-sans-serif: "Source Code Pro", monospace;
@@ -149,7 +149,7 @@
   --bs-danger-text-emphasis: #ea868f;
   --bs-light-text-emphasis: #f8f9fa;
   --bs-dark-text-emphasis: #dee2e6;
-  --bs-custom-color-text-emphasis: #F8F9FA;
+  --bs-custom-color-text-emphasis: #ACB9C3;
   --bs-primary-bg-subtle: #031633;
   --bs-secondary-bg-subtle: #161719;
   --bs-success-bg-subtle: #051b11;
@@ -167,7 +167,7 @@
   --bs-danger-border-subtle: #842029;
   --bs-light-border-subtle: #495057;
   --bs-dark-border-subtle: #343a40;
-  --bs-custom-color-border-subtle: #343A40;
+  --bs-custom-color-border-subtle: #282828;
   --bs-heading-color: inherit;
   --bs-link-color: #6ea8fe;
   --bs-link-hover-color: #8bb9fe;

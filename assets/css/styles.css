@@ -76,6 +76,6 @@
 }
 
 .social-icon {
-    color: black;
+    color:  var(--bs-body-color);
     font-size: 36px;
 }
