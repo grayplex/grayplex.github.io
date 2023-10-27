@@ -3,6 +3,13 @@
     <head>
         <!-- Scripts -->
         <script src="./assets/js/color-mode.js"></script>
+        <script     src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--<script>
+            $(function() {
+                $("#header").load("header.html");
+                $("#footer").load("footer.html");
+            });
+        </script>-->
 
         <!-- Meta -->
         <meta charset="UTF-8">
@@ -23,12 +30,11 @@
         <!-- Vendor CSS Files -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
         <!-- Main CSS File -->
         <link href="./assets/css/styles.css" rel="stylesheet">
         <link href="./assets/css/custom.css" rel="stylesheet">
-        
-
     </head>
     
     <body>
@@ -50,7 +56,7 @@
         </svg>
 
         <!-- Social Icons -->
-        <!--<svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+        <svg xmlns="http://www.w3.org/2000/svg" class="d-none" display="block">
             <symbol id="facebook" viewBox="0 0 16 16">
                 <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
             </symbol>
@@ -60,23 +66,19 @@
             <symbol id="twitter" viewBox="0 0 16 16">
                 <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
             </symbol>
-            <symbol id="tiktok" viewBox="0 0 16 16">
-                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
+            <symbol id="youtube" viewBox="0 0 16 16">
+                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
             </symbol>
             <symbol id="spotify" viewBox="0 0 16 16">
                 <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
             </symbol>
-            <symbol id="soundcloud" viewBox="0 0 16 16">
-                <path d="M11.56 8.87V17h8.76c1.85-.13 2.68-1.27 2.68-2.67c0-1.48-1.12-2.67-2.62-2.67c-.38 0-.7.08-1.03.22c-.24-2.34-2.23-4.17-4.68-4.17c-1.17 0-2.28.44-3.11 1.16m-.88 1.02c-.3-.18-.62-.32-.97-.39V17h1.39V9.34c-.15.16-.29.36-.42.55m-2.35-.54V17h.92V9.38c-.19-.03-.38-.04-.58-.04c-.12 0-.23 0-.34.01M6.5 10v7h.91V9.54c-.33.11-.64.27-.91.46m-1.67 2.5c-.06 0-.12-.06-.19-.09V17h.92v-6.14c-.37.48-.62 1.05-.73 1.64m-2.04-.28v4.69c.21.06.45.09.71.09h.22v-4.86c-.08-.01-.16-.02-.22-.02c-.26 0-.5.04-.71.1M1 14.56c0 .75.34 1.41.87 1.86v-3.71c-.53.44-.87 1.11-.87 1.85Z"></path>
+            <symbol id="soundcloud" viewBox="0 0 24 24">
+                <path d="M1.175 12.225c-.051 0-.094.046-.101.1l-.233 2.154l.233 2.105c.007.058.05.098.101.098c.05 0 .09-.04.099-.098l.255-2.105l-.27-2.154c0-.057-.045-.1-.09-.1m-.899.828c-.06 0-.091.037-.104.094L0 14.479l.165 1.308c0 .055.045.094.09.094s.089-.045.104-.104l.21-1.319l-.21-1.334c0-.061-.044-.09-.09-.09m1.83-1.229c-.061 0-.12.045-.12.104l-.21 2.563l.225 2.458c0 .06.045.12.119.12c.061 0 .105-.061.121-.12l.254-2.474l-.254-2.548c-.016-.06-.061-.12-.121-.12m.945-.089c-.075 0-.135.06-.15.135l-.193 2.64l.21 2.544c.016.077.075.138.149.138c.075 0 .135-.061.15-.15l.24-2.532l-.24-2.623a.134.134 0 0 0-.135-.135l-.031-.017zm1.155.36a.155.155 0 0 0-.159-.149c-.09 0-.158.06-.164.149l-.217 2.43l.2 2.563c0 .09.075.157.159.157c.074 0 .148-.068.148-.158l.227-2.563l-.227-2.444l.033.015zm.809-1.709c-.101 0-.18.09-.18.181l-.21 3.957l.187 2.563c0 .09.08.164.18.164c.094 0 .174-.09.18-.18l.209-2.563l-.209-3.972c-.008-.104-.088-.18-.18-.18m.959-.914a.211.211 0 0 0-.203.194l-.18 4.872l.165 2.548c0 .12.09.209.195.209c.104 0 .194-.089.21-.209l.193-2.548l-.192-4.856c-.016-.12-.105-.21-.21-.21m.989-.449c-.121 0-.211.089-.225.209l-.165 5.275l.165 2.52c.014.119.104.225.225.225a.231.231 0 0 0 .225-.225l.195-2.52l-.196-5.275a.23.23 0 0 0-.225-.225m1.245.045a.237.237 0 0 0-.24-.24a.247.247 0 0 0-.24.24l-.149 5.441l.149 2.503c.016.135.121.24.256.24s.24-.105.24-.24l.164-2.503l-.164-5.456l-.016.015zm.749-.134a.262.262 0 0 0-.255.254l-.15 5.322l.15 2.473c0 .15.12.255.255.255s.255-.12.255-.27l.15-2.474l-.165-5.307a.27.27 0 0 0-.271-.27m1.005.166a.285.285 0 0 0-.284.285l-.103 5.143l.135 2.474c0 .149.119.277.284.277c.149 0 .271-.12.284-.285l.121-2.443l-.135-5.112c-.012-.164-.135-.285-.285-.285m1.184-.945a.31.31 0 0 0-.165-.044a.313.313 0 0 0-.165.044a.3.3 0 0 0-.149.255v.061l-.104 6.048l.115 2.449v.008c.008.06.03.135.074.18a.327.327 0 0 0 .234.104c.08 0 .158-.044.209-.09a.314.314 0 0 0 .091-.225l.015-.24l.117-2.203l-.135-6.086a.287.287 0 0 0-.135-.239l-.002-.022zm1.006-.547a.193.193 0 0 0-.15-.061a.344.344 0 0 0-.209.061a.314.314 0 0 0-.119.24v.029l-.137 6.609l.076 1.215l.061 1.185c0 .164.148.314.328.314c.181 0 .33-.15.33-.329l.15-2.414l-.15-6.637a.333.333 0 0 0-.165-.277m8.934 3.777a2.93 2.93 0 0 0-1.139.232a5.204 5.204 0 0 0-5.188-4.736c-.659 0-1.305.135-1.889.359c-.225.09-.27.18-.285.359v9.368c.016.18.15.33.33.345h8.185C22.681 17.218 24 15.914 24 14.28s-1.319-2.952-2.938-2.952"/>
             </symbol>
-            <symbol id="youtube" viewBox="0 0 16 16">
-                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+            <symbol id="tiktok" viewBox="0 0 16 16">
+                <path d="M9 0h1.98c.144.715.54 1.617 1.235 2.512C12.895 3.389 13.797 4 15 4v2c-1.753 0-3.07-.814-4-1.829V11a5 5 0 1 1-5-5v2a3 3 0 1 0 3 3V0Z"/>
             </symbol>
-        </svg>-->
-
-        <div id="icon-container">
-            <span class="iconify" id="twitter" data-icon="mdi:twitter"></span>
-        </div>
+        </svg>
 
         <!-- Color Mode HTML -->
         <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
@@ -117,89 +119,83 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
 
-
         <!-- Header / Navbar -->
-        <div class="container">
-            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
-                <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
-                    <svg class="bi me-2" width="40" height="32">
-                        <use xlink:href="#bootstrap"></use>
-                    </svg>
-                    <span class="fs-4">>trace_route</span>
+        <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-body-tertiary">    
+            <div class="d-flex flex-grow-1 py-2">
+                <span class="d-sm-none d-block">
+                    <!-- hidden spacer to center brand on mobile -->
+                </span>
+                <a class="navbar-brand d-none ms-3 d-sm-inline-block" href="#">>trace_route</a>
+                <a class="navbar-brand-two mx-auto d-sm-none d-inline-block" href="#">
+                    <img srg="./assets/img/logo.png" alt="logo">
                 </a>
-                <ul class="nav nav-pills">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                <div class="text-right mx-3">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </div>
+                
+            <div class="navbar-collapse collapse flex-grow-1 text-right py-2" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-pills ms-auto align-items-end me-3" id="pills-tab" role="tablist">
+                    <li class="nav-item px-1" role="presentation">
+                        <button class="nav-link px-1 active" id="home-tab" data-bs-toggle="pill" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Music</a>
+                    <li class="nav-item px-1" role="presentation">
+                        <button class="nav-link px-1"       id="music-tab" data-bs-toggle="pill" data-bs-target="#music" type="button" role="tab" aria-controls="music" aria-selected="false">Music</button>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
+                    <li class="nav-item px-1">
+                        <button class="nav-link px-1"        id="about-tab" data-bs-toggle="pill" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">About</button>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                    <li class="nav-item px-1">
+                        <button class="nav-link px-1"       id="contact-tab" data-bs-toggle="pill" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
                     </li>
                 </ul>
-            </header>
-        </div>
+            </div>
+        </nav>
         
-        <!-- Home Page -->
-        <div class="container">
-            
+        
+
+
+        <div class="tab-content" id="pills-tabContent">
+            <!-- Home Page -->
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+                Test content
+                Test content
+                Test content
+                Test content
+                Test content
+            </div>
+
+            <!-- Music Page -->
+            <div class="tab-pane fade" id="music" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
+                Music content
+                Music content
+                Music content
+                Music content
+                Music content
+            </div>
+
+            <!-- About Page -->
+            <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
+                About content
+                About content
+                About content
+                About content
+                About content
+            </div>
+
+            <!-- Contact Page -->
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+                Contact content
+                Contact content
+                Contact content
+                Contact content
+                Contact content
+            </div>
         </div>
 
         <!-- Footer -->
-        <!--<div class="container">
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                <div class="col-md-4 d-flex align-items-center">
-                    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-non lh-1">
-                        <svg class="bi" width="30" height="24">
-                            <use xlink:href="#bootstrap"></use>
-                        </svg>
-                    </a>
-                    <span class="mb-3 mb-md-0 text-body-secondary">© 2023 >trace_route music</span>
-                </div>
-                <ul class="nav col-md-8 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3">
-                        <a href="https://twitter.com/trace_route" class="mx-2">
-                            <iconify-icon inline class="social-icon" icon="mdi:twitter" ></iconify-icon>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a href="https://instagram.com/trace_route" class="mx-2">
-                            <iconify-icon inline class="social-icon" icon="mdi:instagram" ></iconify-icon>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a href="https://facebook.com/trace_route" class="mx-2">
-                            <iconify-icon inline class="social-icon" icon="mdi:facebook" ></iconify-icon>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a href="https://tiktok.com/trace_route" class="mx-2">
-                            <iconify-icon inline class="social-icon" icon="ic:baseline-tiktok" ></iconify-icon>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a href="https://spotify.com/trace_route" class="mx-2">
-                            <iconify-icon inline class="social-icon" icon="mdi:spotify" ></iconify-icon>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a href="https://soundcloud.com/trace_route" class="mx-2">
-                            <iconify-icon inline class="social-icon" icon="mdi:soundcloud" ></iconify-icon>
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a href="https://youtube.com/trace_route" class="mx-2">
-                            <iconify-icon inline class="social-icon" icon="mdi:youtube" ></iconify-icon>
-                        </a>
-                    </li>
-                </ul>
-            </footer>
-        </div>-->
-
         <div class="container">
             <footer class="py-5">
                 <div class="row">
@@ -221,7 +217,49 @@
                         <li class="ms-3">
                             <a class="link-body-emphasis" href="#">
                                 <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#facebook"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#instagram"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#">
+                                <svg class="bi" width="24" height="24">
                                     <use xlink:href="#twitter"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#youtube"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#spotify"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#soundcloud"></use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ms-3">
+                            <a class="link-body-emphasis" href="#">
+                                <svg class="bi" width="24" height="24">
+                                    <use xlink:href="#tiktok"></use>
                                 </svg>
                             </a>
                         </li>

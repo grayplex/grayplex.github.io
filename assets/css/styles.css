@@ -74,8 +74,3 @@
 .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
 }
-
-.social-icon {
-    color:  var(--bs-body-color);
-    font-size: 36px;
-}
