@@ -3,13 +3,8 @@
     <head>
         <!-- Scripts -->
         <script src="./assets/js/color-mode.js"></script>
-        <script     src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!--<script>
-            $(function() {
-                $("#header").load("header.html");
-                $("#footer").load("footer.html");
-            });
-        </script>-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!--<script src="./node_modules/bootstrap/dist/js/bootstrap.js"></script>-->
 
         <!-- Meta -->
         <meta charset="UTF-8">
@@ -28,7 +23,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
 
         <!-- Vendor CSS Files -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+                rel="stylesheet" 
+                integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" 
+                crossorigin="anonymous"
+        >
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 
@@ -38,6 +37,13 @@
     </head>
     
     <body>
+        <!-- Body Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+                crossorigin="anonymous">
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+
         <!-- Color Mode Icons -->
         <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
             <symbol id="check" viewBox="0 0 16 16">
@@ -116,101 +122,74 @@
             </ul>
         </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
-
         <!-- Header / Navbar -->
-        <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-body-tertiary">    
-            <div class="d-flex flex-grow-1 py-2">
-                <span class="d-sm-none d-block">
-                    <!-- hidden spacer to center brand on mobile -->
-                </span>
-                <a class="navbar-brand d-none ms-3 d-sm-inline-block" href="#">>trace_route</a>
-                <a class="navbar-brand-two mx-auto d-sm-none d-inline-block" href="#">
-                    <img srg="./assets/img/logo.png" alt="logo">
-                </a>
-                <div class="text-right mx-3">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-dark fixed-top bg-body-tertiary">    
+                <div class="d-flex flex-grow-1 py-2">
+                    <span class="d-sm-none d-block">
+                        <!-- hidden spacer to center brand on mobile -->
+                    </span>
+                    <a class="navbar-brand d-none ms-3 d-sm-inline-block" href="#">>trace_route</a>
+                    <a class="navbar-brand-two mx-auto d-sm-none d-inline-block" href="#">
+                        <img srg="./assets/img/logo.png" alt="logo">
+                    </a>
+                    <div class="text-right mx-3">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    </div>
                 </div>
-            </div>
-                
-            <div class="navbar-collapse collapse flex-grow-1 text-right py-2" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-pills ms-auto align-items-end me-3" id="pills-tab" role="tablist">
-                    <li class="nav-item px-1" role="presentation">
-                        <button class="nav-link px-1 active" id="home-tab" data-bs-toggle="pill" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
-                    </li>
-                    <li class="nav-item px-1" role="presentation">
-                        <button class="nav-link px-1"       id="music-tab" data-bs-toggle="pill" data-bs-target="#music" type="button" role="tab" aria-controls="music" aria-selected="false">Music</button>
-                    </li>
-                    <li class="nav-item px-1">
-                        <button class="nav-link px-1"        id="about-tab" data-bs-toggle="pill" data-bs-target="#about" type="button" role="tab" aria-controls="about" aria-selected="false">About</button>
-                    </li>
-                    <li class="nav-item px-1">
-                        <button class="nav-link px-1"       id="contact-tab" data-bs-toggle="pill" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+                    
+                <div class="navbar-collapse collapse flex-grow-1 text-right py-2" id="navbarSupportedContent">
+                    <ul class="navbar-nav nav nav-pills ms-auto align-items-end me-3" id="pills-tab" role="tablist">
+                        <li class="nav-item px-1" role="presentation">
+                            <button class="nav-link px-1 active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="home" aria-selected="true">Home</button>
+                        </li>
+                        <li class="nav-item px-1" role="presentation">
+                            <button class="nav-link px-1"       id="pills-music-tab" data-bs-toggle="pill" data-bs-target="#pills-music" type="button" role="tab" aria-controls="music" aria-selected="false">Music</button>
+                        </li>
+                        <li class="nav-item px-1">
+                            <button class="nav-link px-1"        id="pills-about-tab" data-bs-toggle="pill" data-bs-target="#pills-about" type="button" role="tab" aria-controls="about" aria-selected="false">About</button>
+                        </li>
+                        <li class="nav-item px-1">
+                            <button class="nav-link px-1"       id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Contact</button>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         
-        
+        <!-- Tab Content -->
+        <div class="container pt-5">
+            <div class="tab-content" id="pills-tabContent">
+                <!-- Home Page -->
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                    <h1>Home Content</h1>
+                    <h1>Home Content</h1>
+                    <h1>Home Content</h1>
+                    <h1>Home Content</h1>
+                </div>
 
+                <!-- Music Page -->
+                <div class="tab-pane fade" id="pills-music" role="tabpanel" aria-labelledby="pills-music-tab" tabindex="0">
+                    <h3>Music Content</h3>
+                </div>
 
-        <div class="tab-content" id="pills-tabContent">
-            <!-- Home Page -->
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
-                Test content
-                Test content
-                Test content
-                Test content
-                Test content
-            </div>
+                <!-- About Page -->
+                <div class="tab-pane fade" id="pills-about" role="tabpanel" aria-labelledby="pills-about-tab" tabindex="0">
+                    <h3>About Content</h3>
+                </div>
 
-            <!-- Music Page -->
-            <div class="tab-pane fade" id="music" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
-                Music content
-                Music content
-                Music content
-                Music content
-                Music content
-            </div>
-
-            <!-- About Page -->
-            <div class="tab-pane fade" id="about" role="tabpanel" aria-labelledby="about-tab" tabindex="0">
-                About content
-                About content
-                About content
-                About content
-                About content
-            </div>
-
-            <!-- Contact Page -->
-            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
-                Contact content
-                Contact content
-                Contact content
-                Contact content
-                Contact content
+                <!-- Contact Page -->
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                    <h3>Contact Content</h3>
+                </div>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="container">
             <footer class="py-5">
-                <div class="row">
-                    <div class="col-md-5 offset-md-1 mb-3">
-                        <form>
-                            <h5>Stay on top of new music</h5>
-                            <p>Bi-monthly digest of what's new and exciting</p>
-                            <div class="d-flex flex-column flex-sm-row w-100 gap-2">
-                                <label for="newsletter1" class="visually-hidden">Email address</label>
-                                <input id="newsletter1" type="text" class="form-control" placeholder="Email address">
-                                <button class="btn btn-primary" type="submit">Subscribe</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
                 <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
                     <p>© 2023 >trace_route music</p>
                     <ul class="list-unstyled d-flex">

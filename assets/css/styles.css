@@ -74,3 +74,7 @@
 .bd-mode-toggle .dropdown-menu .active .bi {
     display: block !important;
 }
+
+body {
+    padding-top: 60px;
+}
