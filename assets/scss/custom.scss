@@ -20,6 +20,10 @@ $font-family-sans-serif: $font-family-base;
 // 4. Include any default map overrides here
 $custom-colors: (
     "custom-color": #4AFF00,
+    "custom-color-2": #FFB700,
+    "custom-color-3": #00A9FF,
+    "custom-color-4": #282828,
+    "custom-color-5": #ACB9C3
 );
 $theme-colors: map-merge($theme-colors, $custom-colors);
 
@@ -36,6 +40,19 @@ $theme-colors-text: map-merge($map1: $theme-colors-text, $map2: $custom-colors-t
 $theme-colors-bg-subtle: map-merge($map1: $theme-colors-bg-subtle, $map2: $custom-colors-bg-subtle);
 $theme-colors-border-subtle: map-merge($map1: $theme-colors-border-subtle, $map2: $custom-colors-border-subtle);
 
+@include color-mode(dark) {
+    .nav-link.active {
+        color: #282828;
+        background-color: #4AFF00;
+    }
+}
+
+@include color-mode(light) {
+    .nav-link.active {
+        background-color: #00A9FF;
+    }
+}
+
 // Dark Mode
 $custom-colors-text-dark: ("custom-color": #ACB9C3);
 $custom-colors-bg-subtle-dark: ("custom-color": #282828);
@@ -44,6 +61,7 @@ $custom-colors-border-subtle-dark: ("custom-color": #282828);
 $theme-colors-text-dark: map-merge($map1: $theme-colors-text-dark, $map2: $custom-colors-text-dark);
 $theme-colors-bg-subtle-dark: map-merge($map1: $theme-colors-bg-subtle-dark, $map2: $custom-colors-bg-subtle-dark);
 $theme-colors-border-subtle-dark: map-merge($map1: $theme-colors-border-subtle-dark, $map2: $custom-colors-border-subtle-dark);
+
 
 @import "../../node_modules/bootstrap/scss/root";
 
