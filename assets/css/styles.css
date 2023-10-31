@@ -82,3 +82,199 @@ body {
 .nav-pills {
     
 }
+
+.page-title {
+    width: 1200px;
+    height: 37px;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    background: url(../../assets/);
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.contact {
+    text-align: left;
+    margin-top: 25px;
+}
+
+.contact-contain {
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.container-box {
+    width: 100%;
+    background: var(--bs-secondary-bg);
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px;
+    margin-bottom: 60px;
+}
+
+.music-item {
+    display: -ms-flexbox;
+    display: flex;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.music-item:last-child {
+    margin-bottom: 0;
+}
+
+.music-thumb {
+    width: 200px;
+}
+
+.music-thumb img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.music-links {
+    height: 45px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    
+    padding: 0 15px;
+
+    font-size: 1em;
+    font-weight: 700;
+    width: 40%
+}
+
+.music-icons {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.music-icon {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px
+}
+
+.music-description {
+    margin-left: 25px
+}
+
+.music-description h2 {
+    font-size: 36px;
+    
+    line-height: 32px
+}
+
+.music-description .release-date {
+    margin: 10px 0
+}
+
+.music-info {
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    padding-left: 30px
+}
+
+.music-info .music-head {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.music-info h2 {
+    
+    font-size: 1.75em;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    line-height: 1em;
+    
+}
+
+.music-info h3 {
+
+    font-size: 1.1em;
+    font-weight: 400;
+    padding: 0;
+    margin: 0
+}
+
+.music-embed {
+    width: 100%;
+    margin-top: 10px
+}
+
+.music-embed iframe {
+    width: 100%
+}
+
+.single iframe {
+    height: 80px
+}
+
+.ep iframe {
+    height: 250px
+}
+
+.album iframe {
+    height: 410px
+}
+
+.download {
+    text-align: center;
+    color: var(--bs-custom-color-text-emphasis);
+    font-size: 16px;
+    text-decoration: none
+}
+
+.download:hover {
+    font-weight: 600;
+    color: var(--bs-custom-color-text-emphasis);
+}
+
+.download div {
+    background: 0;
+    padding: 10px;
+    border: 1px solid;
+    width: 200px
+}
+
+.download div:hover {
+    background: var(--bs-custom-color-text-emphasis)
+}
+
+.feature {
+    margin-bottom: 25px
+}
+
+.feature .music-thumb {
+    width: 400px
+}
+
+.feature .release-date {
+    margin: 10px 0 5px 0
+}
+
+.feature .description {
+    margin: 5px 0 10px 0
+}

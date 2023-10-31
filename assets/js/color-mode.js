@@ -25,6 +25,17 @@
     } else {
       document.documentElement.setAttribute('data-bs-theme', theme)
     }
+
+    const spotifyLightIframes = document.querySelectorAll(".spotifyLight");
+    const spotifyDarkIframes = document.querySelectorAll(".spotifyDark");
+
+    if (theme === 'light') {
+      spotifyLightIframes.forEach((iframe) => { iframe.style.display = "block"; });
+      spotifyDarkIframes.forEach((iframe) => { iframe.style.display = "none"; });
+    } else {
+      spotifyLightIframes.forEach((iframe) => { iframe.style.display = "none"; });
+      spotifyDarkIframes.forEach((iframe) => { iframe.style.display = "block"; });
+    }
   }
 
   setTheme(getPreferredTheme())
