@@ -78,11 +78,6 @@
 body {
     padding-top: 60px;
 }
-
-.nav-pills {
-    
-}
-
 .page-title {
     width: 1200px;
     height: 37px;
@@ -277,4 +272,16 @@ body {
 
 .feature .description {
     margin: 5px 0 10px 0
+}
+
+.spotifyEmbed {
+    display: none;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 3s ease; /* Transition effect */
+}
+
+.spotifyDark.active,
+.spotifyLight.active {
+    display: block;
+    opacity: 1; /* Fully visible */
 }

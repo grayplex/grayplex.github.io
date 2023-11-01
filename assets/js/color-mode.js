@@ -26,15 +26,15 @@
       document.documentElement.setAttribute('data-bs-theme', theme)
     }
 
-    const spotifyLightIframes = document.querySelectorAll(".spotifyLight");
-    const spotifyDarkIframes = document.querySelectorAll(".spotifyDark");
+    const spotifyLight = document.querySelectorAll(".spotifyLight");
+    const spotifyDark = document.querySelectorAll(".spotifyDark");
 
-    if (theme === 'light') {
-      spotifyLightIframes.forEach((iframe) => { iframe.style.display = "block"; });
-      spotifyDarkIframes.forEach((iframe) => { iframe.style.display = "none"; });
+    if (document.documentElement.getAttribute('data-bs-theme') === 'dark') {
+      spotifyLight.forEach(frame => frame.classList.remove('active'));
+      spotifyDark.forEach(frame => frame.classList.add('active'));
     } else {
-      spotifyLightIframes.forEach((iframe) => { iframe.style.display = "none"; });
-      spotifyDarkIframes.forEach((iframe) => { iframe.style.display = "block"; });
+      spotifyLight.forEach(frame => frame.classList.add('active'));
+      spotifyDark.forEach(frame => frame.classList.remove('active'));
     }
   }
 
