@@ -1,10 +1,10 @@
 // Countdown Logic
 let endDate;
 if (!localStorage.getItem('firstVisit')) {
-    endDate = new Date("December 1, 2023 00:00:00 GMT");
+    endDate = new Date("December 1, 2025 00:00:00 GMT");
     localStorage.setItem('firstVisit', 'true');
 } else {
-    endDate = new Date("December 1, 2023 00:00:00 GMT");
+    endDate = new Date("December 1, 2025 00:00:00 GMT");
 }
 
 function updateCountdown() {
